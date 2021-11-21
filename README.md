@@ -1,2 +1,2 @@
 # mmdet-aitod
-Official implemntation of NWD-RKA
+Official implemntation of NWD-RKA. Coming soon!
