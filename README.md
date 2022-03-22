@@ -1,5 +1,5 @@
 # AI-TOD-v2
-Official implementation AI-TOD-v2 benchmark and the NWD-RKA. 
+Official implementation of the AI-TOD-v2 benchmark and the NWD-RKA. 
 
 Download link of the AI-TOD-v2 dataset:
 >* Images and annotations: https://drive.google.com/drive/folders/1mokzFtLCjyqalSEajYTUmyzXvOHAa4WX
