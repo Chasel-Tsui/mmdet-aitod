@@ -69,7 +69,7 @@ model = dict(
                 match_low_quality=True,
                 ignore_iof_thr=-1,
                 gpu_assign_thr=512,
-                iou_calculator=dict(type='BboxDistanceMetric', constant=12.7),
+                iou_calculator=dict(type='BboxDistanceMetric', constant=12.7), 
                 assign_metric='nwd'),
             sampler=dict(
                 type='RandomSampler',

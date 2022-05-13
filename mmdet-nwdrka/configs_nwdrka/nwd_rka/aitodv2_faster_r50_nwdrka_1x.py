@@ -56,56 +56,6 @@ Optimal LRP FN          @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.479
 # Class-specific LRP-Optimal Thresholds #
  [0.718 0.817 0.792 0.847 0.905 0.706 0.746 0.833]
 
- #### NWD evaluation
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=1500 ] = 0.336
-Average Precision  (AP) @[ IoU=0.25      | area=   all | maxDets=1500 ] = -1.000
-Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.617
-Average Precision  (AP) @[ IoU=0.55      | area=   all | maxDets=1500 ] = 0.597
-Average Precision  (AP) @[ IoU=0.60      | area=   all | maxDets=1500 ] = 0.560
-Average Precision  (AP) @[ IoU=0.65      | area=   all | maxDets=1500 ] = 0.508
-Average Precision  (AP) @[ IoU=0.70      | area=   all | maxDets=1500 ] = 0.428
-Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1500 ] = 0.326
-Average Precision  (AP) @[ IoU=0.80      | area=   all | maxDets=1500 ] = 0.207
-Average Precision  (AP) @[ IoU=0.85      | area=   all | maxDets=1500 ] = 0.093
-Average Precision  (AP) @[ IoU=0.90      | area=   all | maxDets=1500 ] = -1.000
-Average Precision  (AP) @[ IoU=0.95      | area=   all | maxDets=1500 ] = 0.001
-Average Precision  (AP) @[ IoU=0.50:0.95 | area=verytiny | maxDets=1500 ] = 0.300
-Average Precision  (AP) @[ IoU=0.50:0.95 | area=  tiny | maxDets=1500 ] = 0.386
-Average Precision  (AP) @[ IoU=0.50      | area=  tiny | maxDets=1500 ] = 0.648
-Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1500 ] = 0.314
-Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1500 ] = 0.199
-Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.489
-Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.532
-Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1500 ] = 0.542
-Average Recall     (AR) @[ IoU=0.50:0.95 | area=verytiny | maxDets=1500 ] = 0.441
-Average Recall     (AR) @[ IoU=0.50:0.95 | area=  tiny | maxDets=1500 ] = 0.596
-Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1500 ] = 0.469
-Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1500 ] = 0.287
-Optimal LRP             @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.729
-Optimal LRP Loc         @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.223
-Optimal LRP FP          @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.308
-Optimal LRP FN          @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.417
-# Class-specific LRP-Optimal Thresholds #
- [0.718 0.809 0.731 0.819 0.905 0.644 0.673 0.859]
-
-+----------+-------+---------------+-------+--------------+-------+
-| category | AP    | category      | AP    | category     | AP    |
-+----------+-------+---------------+-------+--------------+-------+
-| airplane | 0.218 | bridge        | 0.275 | storage-tank | 0.507 |
-| ship     | 0.521 | swimming-pool | 0.151 | vehicle      | 0.487 |
-| person   | 0.283 | wind-mill     | 0.244 | None         | None  |
-+----------+-------+---------------+-------+--------------+-------+
-
-+----------+-------+---------------+-------+--------------+-------+
-| category | oLRP  | category      | oLRP  | category     | oLRP  |
-+----------+-------+---------------+-------+--------------+-------+
-| airplane | 0.801 | bridge        | 0.777 | storage-tank | 0.590 |
-| ship     | 0.553 | swimming-pool | 0.867 | vehicle      | 0.604 |
-| person   | 0.796 | wind-mill     | 0.840 | None         | None  |
-+----------+-------+---------------+-------+--------------+-------+
-OrderedDict([('bbox_mAP', 0.336), ('bbox_mAP_50', 0.617), ('bbox_mAP_75', 0.597), ('bbox_mAP_vt', 0.56), ('bbox_mAP_t', 0.508), ('bbox_mAP_s', 0.428), ('bbox_mAP_m', 0.326), ('bbox_oLRP', 0.314), ('bbox_oLRP_Localisation', 0.199), ('bbox_oLRP_false_positive', 0.489), ('bbox_oLRP_false_negative', 0.532), ('bbox_mAP_copypaste', '0.336 -1.000 0.617 0.597 0.560 0.508')])
-
-
 '''
 _base_ = [
     #'../_base_/models/faster_rcnn_r50_fpn_aitod.py',
