@@ -1,7 +1,8 @@
 # model settings
 norm_cfg = dict(type='BN', requires_grad=False)
 model = dict(
-    type='MaskRCNN',
+    type='FasterRCNN',
+    pretrained='open-mmlab://detectron2/resnet50_caffe',
     backbone=dict(
         type='ResNet',
         depth=50,
@@ -12,10 +13,7 @@ model = dict(
         frozen_stages=1,
         norm_cfg=norm_cfg,
         norm_eval=True,
-        style='caffe',
-        init_cfg=dict(
-            type='Pretrained',
-            checkpoint='open-mmlab://detectron2/resnet50_caffe')),
+        style='caffe'),
     rpn_head=dict(
         type='RPNHead',
         in_channels=1024,
@@ -53,7 +51,7 @@ model = dict(
             with_avg_pool=True,
             roi_feat_size=7,
             in_channels=2048,
-            num_classes=80,
+            num_classes=8,
             bbox_coder=dict(
                 type='DeltaXYWHBBoxCoder',
                 target_means=[0., 0., 0., 0.],
@@ -61,16 +59,7 @@ model = dict(
             reg_class_agnostic=False,
             loss_cls=dict(
                 type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
-            loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
-        mask_roi_extractor=None,
-        mask_head=dict(
-            type='FCNMaskHead',
-            num_convs=0,
-            in_channels=2048,
-            conv_out_channels=256,
-            num_classes=80,
-            loss_mask=dict(
-                type='CrossEntropyLoss', use_mask=True, loss_weight=1.0))),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
     # model training and testing settings
     train_cfg=dict(
         rpn=dict(
@@ -109,17 +98,15 @@ model = dict(
                 pos_fraction=0.25,
                 neg_pos_ub=-1,
                 add_gt_as_proposals=True),
-            mask_size=14,
             pos_weight=-1,
             debug=False)),
     test_cfg=dict(
         rpn=dict(
             nms_pre=6000,
+            max_per_img=3000,
             nms=dict(type='nms', iou_threshold=0.7),
-            max_per_img=1000,
             min_bbox_size=0),
         rcnn=dict(
             score_thr=0.05,
             nms=dict(type='nms', iou_threshold=0.5),
-            max_per_img=100,
-            mask_thr_binary=0.5)))
+            max_per_img=3000)))

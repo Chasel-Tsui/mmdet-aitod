@@ -1,4 +1,63 @@
+'''
++----------+-------+---------------+-------+--------------+-------+
+| category | AP    | category      | AP    | category     | AP    |
++----------+-------+---------------+-------+--------------+-------+
+| airplane | 0.320 | bridge        | 0.202 | storage-tank | 0.378 |
+| ship     | 0.434 | swimming-pool | 0.166 | vehicle      | 0.273 |
+| person   | 0.116 | wind-mill     | 0.091 | None         | None  |
++----------+-------+---------------+-------+--------------+-------+
+2021-11-03 21:30:33,140 - mmdet - INFO -
++----------+-------+---------------+-------+--------------+-------+
+| category | oLRP  | category      | oLRP  | category     | oLRP  |
++----------+-------+---------------+-------+--------------+-------+
+| airplane | 0.721 | bridge        | 0.822 | storage-tank | 0.672 |
+| ship     | 0.614 | swimming-pool | 0.861 | vehicle      | 0.766 |
+| person   | 0.904 | wind-mill     | 0.917 | None         | None  |
++----------+-------+---------------+-------+--------------+-------+
+2021-11-03 21:30:33,767 - mmdet - INFO - Exp name: v001.06.07_aitodv2_detectors_r50_rpn_NWD_rk.py
+2021-11-03 21:30:33,768 - mmdet - INFO - Epoch(val) [12][7004]	bbox_mAP: 0.2470, bbox_mAP_50: 0.5740, bbox_mAP_75: 0.5130, bbox_mAP_vt: 0.4420, bbox_mAP_t: 0.3590, bbox_mAP_s: 0.2650, bbox_mAP_m: 0.1710, bbox_oLRP: 0.2980, bbox_oLRP_Localisation: 0.3930, bbox_oLRP_false_positive: 0.3450, bbox_oLRP_false_negative: 0.3670, bbox_mAP_copypaste: 0.247 -1.000 0.574 0.513 0.442 0.359
+Loading and preparing results...
+DONE (t=6.38s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=1963.37s).
+Accumulating evaluation results...
+DONE (t=24.17s).
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=1500 ] = 0.247
+Average Precision  (AP) @[ IoU=0.25      | area=   all | maxDets=1500 ] = -1.000
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.574
+Average Precision  (AP) @[ IoU=0.55      | area=   all | maxDets=1500 ] = 0.513
+Average Precision  (AP) @[ IoU=0.60      | area=   all | maxDets=1500 ] = 0.442
+Average Precision  (AP) @[ IoU=0.65      | area=   all | maxDets=1500 ] = 0.359
+Average Precision  (AP) @[ IoU=0.70      | area=   all | maxDets=1500 ] = 0.265
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1500 ] = 0.171
+Average Precision  (AP) @[ IoU=0.80      | area=   all | maxDets=1500 ] = 0.095
+Average Precision  (AP) @[ IoU=0.85      | area=   all | maxDets=1500 ] = 0.041
+Average Precision  (AP) @[ IoU=0.90      | area=   all | maxDets=1500 ] = -1.000
+Average Precision  (AP) @[ IoU=0.95      | area=   all | maxDets=1500 ] = 0.002
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=verytiny | maxDets=1500 ] = 0.097
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=  tiny | maxDets=1500 ] = 0.242
+Average Precision  (AP) @[ IoU=0.50      | area=  tiny | maxDets=1500 ] = 0.582
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1500 ] = 0.298
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1500 ] = 0.393
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.345
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.367
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1500 ] = 0.370
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=verytiny | maxDets=1500 ] = 0.158
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=  tiny | maxDets=1500 ] = 0.378
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1500 ] = 0.413
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1500 ] = 0.484
+Optimal LRP             @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.785
+Optimal LRP Loc         @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.278
+Optimal LRP FP          @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.319
+Optimal LRP FN          @[ IoU=0.50      | area=   all | maxDets=1500 ] = 0.424
+# Class-specific LRP-Optimal Thresholds #
+ [0.436 0.651 0.699 0.682 0.721 0.504 0.54  0.32 ]
+'''
 _base_ = [
+    # '../_base_/models/cascade_rcnn_r50_fpn.py',
     '../_base_/datasets/aitodv2_detection.py',
     '../_base_/schedules/schedule_1x.py',
     '../_base_/default_runtime.py'
@@ -125,13 +184,12 @@ model = dict(
     train_cfg=dict(
         rpn=dict(
             assigner=dict(
-                type='MaxIoUAssigner',
-                pos_iou_thr=0.7,
-                neg_iou_thr=0.3,
-                min_pos_iou=0.3,
-                match_low_quality=True,
+                type='RankingAssigner',
                 ignore_iof_thr=-1,
-                gpu_assign_thr=256),
+                gpu_assign_thr=512,
+                iou_calculator=dict(type='BboxDistanceMetric'),
+                assign_metric='nwd',
+                topk=3),
             sampler=dict(
                 type='RandomSampler',
                 num=256,

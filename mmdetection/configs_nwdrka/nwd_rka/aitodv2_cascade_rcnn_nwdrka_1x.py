@@ -1,49 +1,28 @@
+
 _base_ = [
     '../_base_/datasets/aitodv2_detection.py',
     '../_base_/schedules/schedule_1x.py',
     '../_base_/default_runtime.py'
 ]
 
-
 # model settings
 model = dict(
     type='CascadeRCNN',
     pretrained='torchvision://resnet50',
     backbone=dict(
-        type='DetectoRS_ResNet',
+        type='ResNet',
         depth=50,
         num_stages=4,
         out_indices=(0, 1, 2, 3),
         frozen_stages=1,
         norm_cfg=dict(type='BN', requires_grad=True),
-        conv_cfg=dict(type='ConvAWS'),
         norm_eval=True,
-        sac=dict(type='SAC', use_deform=True),
-        stage_with_sac=(False, True, True, True),
-        output_img=True,
         style='pytorch'),
     neck=dict(
-        type='RFP',
+        type='FPN',
         in_channels=[256, 512, 1024, 2048],
         out_channels=256,
-        num_outs=5,
-        rfp_steps=2,
-        aspp_out_channels=64,
-        aspp_dilations=(1, 3, 6, 1),
-        rfp_backbone=dict(
-            rfp_inplanes=256,
-            type='DetectoRS_ResNet',
-            depth=50,
-            num_stages=4,
-            out_indices=(0, 1, 2, 3),
-            frozen_stages=1,
-            norm_cfg=dict(type='BN', requires_grad=True),
-            norm_eval=True,
-            conv_cfg=dict(type='ConvAWS'),
-            sac=dict(type='SAC', use_deform=True),
-            stage_with_sac=(False, True, True, True),
-            pretrained='torchvision://resnet50',
-            style='pytorch')),
+        num_outs=5),
     rpn_head=dict(
         type='RPNHead',
         in_channels=256,
@@ -125,13 +104,12 @@ model = dict(
     train_cfg=dict(
         rpn=dict(
             assigner=dict(
-                type='MaxIoUAssigner',
-                pos_iou_thr=0.7,
-                neg_iou_thr=0.3,
-                min_pos_iou=0.3,
-                match_low_quality=True,
+                type='RankingAssigner',
                 ignore_iof_thr=-1,
-                gpu_assign_thr=256),
+                gpu_assign_thr=512,
+                iou_calculator=dict(type='BboxDistanceMetric'),
+                assign_metric='nwd',  # nwd_rpn
+                topk=3), 
             sampler=dict(
                 type='RandomSampler',
                 num=256,
@@ -155,7 +133,7 @@ model = dict(
                     min_pos_iou=0.5,
                     match_low_quality=False,
                     ignore_iof_thr=-1,
-                    gpu_assign_thr=256),
+                    gpu_assign_thr=512),
                 sampler=dict(
                     type='RandomSampler',
                     num=512,
@@ -172,7 +150,7 @@ model = dict(
                     min_pos_iou=0.6,
                     match_low_quality=False,
                     ignore_iof_thr=-1,
-                    gpu_assign_thr=256),
+                    gpu_assign_thr=512),
                 sampler=dict(
                     type='RandomSampler',
                     num=512,
@@ -189,7 +167,7 @@ model = dict(
                     min_pos_iou=0.7,
                     match_low_quality=False,
                     ignore_iof_thr=-1,
-                    gpu_assign_thr=256),
+                    gpu_assign_thr=512),
                 sampler=dict(
                     type='RandomSampler',
                     num=512,
@@ -213,10 +191,4 @@ model = dict(
 # optimizer
 optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001)
 # learning policy
-lr_config = dict(
-    policy='step',
-    warmup='linear',
-    warmup_iters=5000,
-    warmup_ratio=0.001,
-    step=[8, 11])
 checkpoint_config = dict(interval=4)

@@ -65,6 +65,12 @@ _base_ = [
 
 
 # optimizer
-optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001)
+optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001) 
+# Note: We find that the gradient of one-stage detector is quite unstable and very easy to explode on Tiny Object Detection tasks.
+# we recommend the following solutions:
+## lower the learning rate and increase the warm up iterations. 
+## change the regression loss to DIoU loss, which is much more stable and easier to converge.
+## use P2-P6 of FPN instead of P3-P7, the improvement is significant but the problem is that it will bring great computation burden. 
+
 # learning policy
 checkpoint_config = dict(interval=4)
