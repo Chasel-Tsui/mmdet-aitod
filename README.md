@@ -7,7 +7,7 @@ The source code of the NWD-RKA please refer to the folder mmdet-nwdrka.
 
 ## Introduction
 The Normalized Wasserstein Distance and the RanKing-based Assigning strategy (NWD-RKA) for tiny object detection. 
-![demo image](figures/nwd_rka.png)
+![demo image](figures/nwdrka.PNG)
 
 A comparison between AI-TOD and AI-TOD-v2.
 ![demo image](figures/fps2.gif)
