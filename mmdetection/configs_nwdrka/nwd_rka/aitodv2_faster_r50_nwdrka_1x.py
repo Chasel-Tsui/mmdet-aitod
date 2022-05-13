@@ -222,7 +222,7 @@ model = dict(
         rcnn=dict(
             score_thr=0.05,
             nms=dict(type='nms', iou_threshold=0.5),
-            max_per_img=3000)
+            max_per_img=3000) # If you want to cut down on the inference times, you can set max_per_img to a smaller number 
     ))
 
 #fp16 = dict(loss_scale=512.)
@@ -230,11 +230,4 @@ model = dict(
 optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001)
 # learning policy
 checkpoint_config = dict(interval=4)
-# lr_config = dict(
-#     policy='step',
-#     warmup='linear',
-#     warmup_iters=500,
-#     warmup_ratio=0.001,
-#     step=[16, 22])
-# runner = dict(type='EpochBasedRunner', max_epochs=24)
 evaluation = dict(interval=12, metric='bbox')
