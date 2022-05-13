@@ -1,4 +1,4 @@
-# Official implementation of the AI-TOD-v2 benchmark and the NWD-RKA. 
+# Detecting Tiny Objects in Aerial Images: AI-TOD-v2 and NWD-RKA
 Official implementation of the AI-TOD-v2 benchmark and the NWD-RKA. 
 
 The annotations of AI-TOD-v2: https://drive.google.com/drive/folders/1Er14atDO1cBraBD4DSFODZV1x7NHO_PY?usp=sharing
