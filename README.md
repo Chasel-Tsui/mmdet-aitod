@@ -4,3 +4,10 @@ Official implementation of the paper: Detecting Tiny Objects in Aerial Images: A
 The annotations of AI-TOD-v2: https://drive.google.com/drive/folders/1Er14atDO1cBraBD4DSFODZV1x7NHO_PY?usp=sharing
 
 The source code of the NWD-RKA please refer to the folder mmdet-nwdrka. 
+
+## Introduction
+The Normalized Wasserstein Distance and the RanKing-based Assigning strategy (NWD-RKA) for tiny object detection. 
+![demo image](figures/nwd_rka.png)
+
+A comparison between AI-TOD and AI-TOD-v2.
+![demo image](figures/fps2.gif)
