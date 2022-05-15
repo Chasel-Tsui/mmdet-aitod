@@ -44,6 +44,9 @@ pip install -r requirements/build.txt
 python setup.py develop
 ```
 
+References
+* [AI-TOD](https://github.com/jwwangchn/AI-TOD)
+
 
 
 
