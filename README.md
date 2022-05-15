@@ -14,11 +14,11 @@ A comparison between AI-TOD and AI-TOD-v2.
 
 ## Benchmark
 Supported baselines for tiny object detection:
-- [ ] Baselines
+- [x] [Baselines](mmdet-nwdrka/configs)
 
 Supported horizontal tiny object detection methods:
-- [ ] DotD
-- [ ] NWD-RKA
+- [x] [DotD](mmdet-nwdrka/configs_nwdrka)
+- [x] [NWD-RKA](mmdet-nwdrka/configs_nwdrka)
 
 
 ## Installation and Get Started
