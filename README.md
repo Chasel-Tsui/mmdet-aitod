@@ -23,6 +23,19 @@ Supported horizontal tiny object detection methods:
 
 ## Installation and Get Started
 
+Required environments
+* Linux
+* Python 3.6+
+* PyTorch 1.3+
+* CUDA 9.2+
+* GCC 5+
+* MMCV
+* [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod)
+
+Prepare Environment
+
+Install TODbox
+
 
 
 
