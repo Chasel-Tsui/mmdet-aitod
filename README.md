@@ -32,10 +32,16 @@ Required environments
 * [MMCV](https://mmcv.readthedocs.io/en/latest/#installation)
 * [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod)
 
-Prepare Environment
-
 
 Install TODbox
+Note that our TODbox is based on the [MMDetection2.24.1](https://github.com/open-mmlab/mmdetection). Assume that your environment has satisfied the above requirements, please follow the following steps for installation.
+
+```shell script
+git clone https://github.com/Chasel-Tsui/mmdet-aitod.git
+cd mmdet-nwdrka
+pip install -r requirements/build.txt
+python setup.py develop
+```
 
 
 
