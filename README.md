@@ -12,13 +12,13 @@ The Normalized Wasserstein Distance and the RanKing-based Assigning strategy (NW
 A comparison between AI-TOD and AI-TOD-v2.
 ![demo image](figures/fps2.gif)
 
-## Benchmark
+## Supported Methods
 Supported baselines for tiny object detection:
-- [x] [Baselines](mmdet-nwdrka/configs)
+- [x] [Baselines](mmdet-nwdrka/configs/baseline)
 
 Supported horizontal tiny object detection methods:
-- [x] [DotD](mmdet-nwdrka/configs_nwdrka)
-- [x] [NWD-RKA](mmdet-nwdrka/configs_nwdrka)
+- [x] [DotD](mmdet-nwdrka/configs_nwdrka/nwd_rka)
+- [x] [NWD-RKA](mmdet-nwdrka/configs_nwdrka/nwd_rka)
 
 
 ## Installation and Get Started
@@ -29,10 +29,11 @@ Required environments
 * PyTorch 1.3+
 * CUDA 9.2+
 * GCC 5+
-* MMCV
+* [MMCV](https://mmcv.readthedocs.io/en/latest/#installation)
 * [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod)
 
 Prepare Environment
+
 
 Install TODbox
 
