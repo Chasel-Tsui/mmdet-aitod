@@ -14,19 +14,15 @@ A comparison between AI-TOD and AI-TOD-v2.
 
 ## Benchmark
 Supported baselines for tiny object detection:
-- [ ] baselines
+- [ ] Baselines
 
 Supported horizontal tiny object detection methods:
 - [ ] DotD
 - [ ] NWD-RKA
 
-Supported oriented tiny object detection methods:
-
-coming soon!
 
 ## Installation and Get Started
 
-## Acknowledgement
 
 
 
