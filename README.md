@@ -14,7 +14,7 @@ A comparison between AI-TOD and AI-TOD-v2.
 
 ## Supported Methods
 Supported baselines for tiny object detection:
-- [x] [Baselines](mmdet-nwdrka/configs/baseline)
+- [x] [Baselines](mmdet-nwdrka/configs/configs_nwdrka/baseline)
 
 Supported horizontal tiny object detection methods:
 - [x] [DotD](mmdet-nwdrka/configs_nwdrka/nwd_rka)
@@ -23,7 +23,7 @@ Supported horizontal tiny object detection methods:
 
 ## Installation and Get Started
 
-Required environments
+Required environments:
 * Linux
 * Python 3.6+
 * PyTorch 1.3+
@@ -33,9 +33,9 @@ Required environments
 * [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod)
 
 
-Install TODbox
+Install TODbox:
 
-Note that our TODbox is based on the [MMDetection2.24.1](https://github.com/open-mmlab/mmdetection). Assume that your environment has satisfied the above requirements, please follow the following steps for installation.
+Note that our TODbox is based on the [MMDetection 2.24.1](https://github.com/open-mmlab/mmdetection). Assume that your environment has satisfied the above requirements, please follow the following steps for installation.
 
 ```shell script
 git clone https://github.com/Chasel-Tsui/mmdet-aitod.git
