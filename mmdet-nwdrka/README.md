@@ -1,6 +1,6 @@
 ## Installation and Get Started
 
-Required environments
+Required environments:
 * Linux
 * Python 3.6+
 * PyTorch 1.3+
@@ -10,7 +10,7 @@ Required environments
 * [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod)
 
 
-Install TODbox
+Install TODbox:
 
 Note that our TODbox is based on the [MMDetection 2.24.1](https://github.com/open-mmlab/mmdetection). Assume that your environment has satisfied the above requirements, please follow the following steps for installation.
 
