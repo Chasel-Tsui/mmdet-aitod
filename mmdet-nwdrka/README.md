@@ -26,7 +26,7 @@ Get Started
 Train a network with with single GPU, for example, Faster R-CNN w/ NWD-RKA:
 
 ```
-python tools/train.py configs/nwdrka/
+python tools/train.py configs_nwdrka/nwdrka/aitod_faster_r50_nwdrka_1x.py
 ```
 
 ## Performance
