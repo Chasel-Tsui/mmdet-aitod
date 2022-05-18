@@ -21,6 +21,14 @@ pip install -r requirements/build.txt
 python setup.py develop
 ```
 
+Get Started
+
+Train a network with with single GPU, for example, Faster R-CNN w/ NWD-RKA:
+
+```
+python tools/train.py configs/nwdrka/
+```
+
 ## Performance
 Table 1. **Training Set:** AI-TOD-v2 trainval set, **Validation Set:** AI-TOD-v2 test set, 12 epochs
 Method | Backbone | mAP | AP<sub>50</sub> | AP<sub>75</sub> |AP<sub>vt</sub> | AP<sub>t</sub>  | AP<sub>s</sub>  | AP<sub>m</sub>  
