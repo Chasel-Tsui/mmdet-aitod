@@ -1,5 +1,5 @@
 # TODbox (Tiny Object Detection Box)
-Official implementation of the paper: Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark
+Official implementation of the paper: Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark (accepted by ISPRS J P & RS)
 
 The annotations of **AI-TOD-v2**: https://drive.google.com/drive/folders/1Er14atDO1cBraBD4DSFODZV1x7NHO_PY?usp=sharing
 
