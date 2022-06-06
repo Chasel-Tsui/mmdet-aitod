@@ -44,6 +44,20 @@ pip install -r requirements/build.txt
 python setup.py develop
 ```
 
+## Citation
+
+If you use this dataset in your research, please consider citing the paper.
+
+```
+@inproceedings{AI-TOD_2020_ICPR,
+    title={Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark},
+    author={Chang, Xu and Wang, Jinwang and Yang, Wen and Guo, Haowen and Zhang, Ruixiang and Xia, Gui-Song},
+    booktitle=ISPRS Journal of Photogrammetry and Remote Sensing,
+    pages={in press},
+    year={2022},
+}
+```
+
 ## References
 * [AI-TOD](https://github.com/jwwangchn/AI-TOD)
 * [MMDetection](https://github.com/open-mmlab/mmdetection)
