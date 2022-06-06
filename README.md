@@ -51,9 +51,9 @@ If you use this dataset in your research, please consider citing the paper.
 ```
 @inproceedings{NWDRKA_2020_ISPRS,
     title={Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark},
-    author={Chang, Xu and Wang, Jinwang and Yang, Wen and Guo, Haowen and Zhang, Ruixiang and Xia, Gui-Song},
+    author={Chang, Xu and Jinwang, Wang and Wen, Yang and Huai, Yu and Lei, Yu and Gui-Song, Xia},
     booktitle=ISPRS Journal of Photogrammetry and Remote Sensing,
-    pages={in press},
+    pages={In press},
     year={2022},
 }
 ```
