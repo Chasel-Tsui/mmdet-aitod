@@ -49,7 +49,7 @@ python setup.py develop
 If you use this dataset in your research, please consider citing the paper.
 
 ```
-@inproceedings{AI-TOD_2020_ICPR,
+@inproceedings{NWDRKA_2020_ISPRS,
     title={Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark},
     author={Chang, Xu and Wang, Jinwang and Yang, Wen and Guo, Haowen and Zhang, Ruixiang and Xia, Gui-Song},
     booktitle=ISPRS Journal of Photogrammetry and Remote Sensing,
