@@ -17,7 +17,7 @@ Supported baselines for tiny object detection:
 - [x] [Baselines](mmdet-nwdrka/configs_nwdrka/baseline)
 
 Supported horizontal tiny object detection methods:
-- [x] [DotD](mmdet-nwdrka/configs_nwdrka/nwd_rka)[Paper](https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html)
+- [x] [DotD](mmdet-nwdrka/configs_nwdrka/nwd_rka) [[Paper]](https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html)
 - [x] [NWD-RKA](mmdet-nwdrka/configs_nwdrka/nwd_rka)
 
 
