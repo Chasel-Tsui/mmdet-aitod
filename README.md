@@ -52,7 +52,7 @@ If you use this repo in your research, please consider citing these papers.
 @inproceedings{xu2021dot,
   title={Dot Distance for Tiny Object Detection in Aerial Images},
   author={Xu, Chang and Wang, Jinwang and Yang, Wen and Yu, Lei},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
   pages={1192--1201},
   year={2021}
 }
