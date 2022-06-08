@@ -17,7 +17,7 @@ Supported baselines for tiny object detection:
 - [x] [Baselines](mmdet-nwdrka/configs_nwdrka/baseline)
 
 Supported horizontal tiny object detection methods:
-- [x] [DotD](mmdet-nwdrka/configs_nwdrka/nwd_rka)
+- [x] [DotD](mmdet-nwdrka/configs_nwdrka/nwd_rka)[Paper](https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html)
 - [x] [NWD-RKA](mmdet-nwdrka/configs_nwdrka/nwd_rka)
 
 
@@ -46,9 +46,17 @@ python setup.py develop
 
 ## Citation
 
-If you use this dataset in your research, please consider citing the paper.
+If you use this repo in your research, please consider citing these papers.
 
 ```
+@inproceedings{xu2021dot,
+  title={Dot Distance for Tiny Object Detection in Aerial Images},
+  author={Xu, Chang and Wang, Jinwang and Yang, Wen and Yu, Lei},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={1192--1201},
+  year={2021}
+}
+
 @inproceedings{NWDRKA_2020_ISPRS,
     title={Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark},
     author={Chang, Xu and Jinwang, Wang and Wen, Yang and Huai, Yu and Lei, Yu and Gui-Song, Xia},
