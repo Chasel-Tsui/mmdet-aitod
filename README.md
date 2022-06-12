@@ -1,9 +1,8 @@
 # TODbox (Tiny Object Detection Box)
-Official implementation of the paper: Detecting Tiny Objects in Aerial Images: A Normalized Wasserstein Distance and A New Benchmark
+This is a repository of the official implementation of the following paper: 
+* [Paper](https://www.sciencedirect.com/science/article/pii/S0924271622001599?dgcid=author) Detecting tiny Objects in aerial images: A normalized Wasserstein distance and A new benchmark (ISPRS J P & RS, 2022)
+* [Paper](https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html) Dot Distance for Tiny Object Detection in Aerial Images (CVPRW, 2021)
 
-The annotations of **AI-TOD-v2**: https://drive.google.com/drive/folders/1Er14atDO1cBraBD4DSFODZV1x7NHO_PY?usp=sharing
-
-The source code of the **NWD-RKA** please refer to the folder [mmdet-nwdrka](https://github.com/Chasel-Tsui/mmdet-aitod/tree/main/mmdet-nwdrka). 
 
 ## Introduction
 The Normalized Wasserstein Distance and the RanKing-based Assigning strategy (NWD-RKA) for tiny object detection. 
@@ -11,6 +10,12 @@ The Normalized Wasserstein Distance and the RanKing-based Assigning strategy (NW
 
 A comparison between AI-TOD and AI-TOD-v2.
 ![demo image](figures/fps2.gif)
+
+## Supported Data
+- [x] [AI-TOD](https://github.com/jwwangchn/AI-TOD)
+- [x] [AI-TOD-v2](https://drive.google.com/drive/folders/1Er14atDO1cBraBD4DSFODZV1x7NHO_PY?usp=sharing)
+
+Notes: The images of the **AI-TOD-v2** are the same of the **AI-TOD**. In this stage, we only release the train, val annotations of the **AI-TOD-v2**, the test annotations will be used to hold further competitions.
 
 ## Supported Methods
 Supported baselines for tiny object detection:
