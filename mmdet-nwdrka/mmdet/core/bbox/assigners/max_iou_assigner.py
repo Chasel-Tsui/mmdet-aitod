@@ -52,7 +52,8 @@ class MaxIoUAssigner(BaseAssigner):
                  ignore_wrt_candidates=True,
                  match_low_quality=True,
                  gpu_assign_thr=-1,
-                 iou_calculator=dict(type='BboxOverlaps2D')):
+                 iou_calculator=dict(type='BboxOverlaps2D'),
+                 assign_metric='iou'):
         self.pos_iou_thr = pos_iou_thr
         self.neg_iou_thr = neg_iou_thr
         self.min_pos_iou = min_pos_iou
@@ -62,6 +63,7 @@ class MaxIoUAssigner(BaseAssigner):
         self.gpu_assign_thr = gpu_assign_thr
         self.match_low_quality = match_low_quality
         self.iou_calculator = build_iou_calculator(iou_calculator)
+        self.assign_metric = assign_metric
 
     def assign(self, bboxes, gt_bboxes, gt_bboxes_ignore=None, gt_labels=None):
         """Assign gt to bboxes.
@@ -108,7 +110,7 @@ class MaxIoUAssigner(BaseAssigner):
             if gt_labels is not None:
                 gt_labels = gt_labels.cpu()
 
-        overlaps = self.iou_calculator(gt_bboxes, bboxes)
+        overlaps = self.iou_calculator(gt_bboxes, bboxes, mode=self.assign_metric)
 
         if (self.ignore_iof_thr > 0 and gt_bboxes_ignore is not None
                 and gt_bboxes_ignore.numel() > 0 and bboxes.numel() > 0):
