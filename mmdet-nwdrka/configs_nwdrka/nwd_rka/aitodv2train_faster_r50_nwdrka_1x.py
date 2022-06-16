@@ -66,7 +66,7 @@ model = dict(
                 ignore_iof_thr=-1,
                 gpu_assign_thr=512,
                 iou_calculator=dict(type='BboxDistanceMetric'),
-                assign_metric='wasserstein',
+                assign_metric='nwd',
                 topk=2),
             sampler=dict(
                 type='RandomSampler',
