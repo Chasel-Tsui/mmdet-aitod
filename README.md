@@ -25,7 +25,7 @@ Supported baselines for tiny object detection:
 Supported horizontal tiny object detection methods:
 - [x] [DotD](mmdet-nwdrka/configs_nwdrka/nwd_rka) 
 - [x] [NWD-RKA](mmdet-nwdrka/configs_nwdrka/nwd_rka)
-- [ ] [RFLA] 
+- [ ] [RFLA](https://github.com/Chasel-Tsui/mmdet-rfla) 
 
 Supported rotated tiny object detection methods:
 - [ ] Stay tuned, coming soon!
