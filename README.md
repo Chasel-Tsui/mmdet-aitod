@@ -30,7 +30,7 @@ Supported horizontal tiny object detection methods:
 - [ ] [RFLA](https://github.com/Chasel-Tsui/mmdet-rfla) 
 
 Supported rotated tiny object detection methods:
-- [ ] Stay tuned, coming soon!
+- [ ] [DCFL](https://github.com/Chasel-Tsui/mmrotate-dcfl)
 
 
 ## Installation and Get Started
